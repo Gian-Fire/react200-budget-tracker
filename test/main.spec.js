@@ -25,8 +25,8 @@ describe('express', function () {
   it('should have the correct page title', () =>
     nightmare
       .goto(url)
-      .evaluate(() => document.querySelector('body').innerText)
-      // .end()
+      .evaluate(() => document.querySelector('body').innerHTML)
+      .end()
       .then((text) => {
         expect(text).to.contain('Budget Tracker');
       })
