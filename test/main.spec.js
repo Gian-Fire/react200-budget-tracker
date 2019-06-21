@@ -17,7 +17,7 @@ const url = 'http://localhost:8888';
 
 
 describe('express', function () {
-  this.timeout(30000);
+  this.timeout(6500);
   beforeEach(() => {
     nightmare = new Nightmare();
   });
@@ -26,7 +26,7 @@ describe('express', function () {
     nightmare
       .goto(url)
       .evaluate(() => document.querySelector('body').innerText)
-      .end()
+      // .end()
       .then((text) => {
         expect(text).to.contain('Budget Tracker');
       })
